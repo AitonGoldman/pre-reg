@@ -67,7 +67,7 @@ export class PayPreRegFeePage {
             //            token: function(token) {
             token : (token)=>{
                 this.stripeSuccess=true;
-                this.pssApi.completeTicketPurchase({stripe_token:token.id,email:token.email},1,tokenPurchaseId)
+                this.pssApi.completeTicketPurchase({stripe_token:token.id,email:token.email},3,tokenPurchaseId)
                     .subscribe((results)=>{
                         
                         if(results != null){

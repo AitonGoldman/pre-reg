@@ -32,7 +32,7 @@ export class CollectPlayerInfoPage {
     ionViewDidEnter() {
     }
     onSubmit(){        
-        this.pssApi.createPreRegPlayer({players:[this.player]},'1')
+        this.pssApi.createPreRegPlayer({players:[this.player]},'3')
             .subscribe((results)=>{
                 if(results == null){
                     return;
