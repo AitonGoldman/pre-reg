@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span hideWhen='mobile'> Registration for 2018 Intergalactic</span>
+      <span showWhen='mobile'> Registration</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class='card-background-page'> 
+  <div margin-top>
+    <img showWhen='mobile' style='opacity:.5;width:100%' [attr.height]="platform.height()/4+'px'" src="/assets/imgs/players.jpg"/>
+    <div showWhen='mobile' class="card-title" text-center><h1 no-margin no-padding>You Are Registered</h1></div>
+    <div hideWhen='mobile' text-center><h1 no-margin no-padding>You Are Registered</h1></div>
+  </div>
+  <div margin-top padding-left padding-right [attr.text-center]="platform.is('mobile') ? null : ''">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          Below is your player id and pin.  You will need your player id to play in the intergalactic tournament.  You will need your player id and pin to add yourself to queues through the <a href="https://results.papa.org"> Papa Scoring Software </a>.  You will not need to register or checkin for the Intergalactic tournament once it starts - just give your player number to a scorekeeper, or add yourself to a queue.    
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          You player id, pin, and a link to the Papa Scoring Software will be emailed to the email address {{player.email_address}}.  INFO about charities.  
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-right>
+          Player Id : 
+        </ion-col>
+        <ion-col text-left>
+          {{player.event_player_id}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-right>
+          Pin : 
+        </ion-col>
+        <ion-col text-left>
+          {{player.pin_number}}
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>     
+  </div>
+  <div margin-top text-center>
+    <button ion-button [navPush]="'HomePage'">Register another player</button>
+  </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<!--
+  Generated template for the PayPreRegFeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <span hideWhen='mobile'> Registration for 2018 Intergalactic</span>
+      <span showWhen='mobile'> Registration</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [style.margin-top]="(platform.height()/4)-25+'px'" *ngIf="displayReturnMessage==true" text-center>
+    If you need to change your information, use the back button to re-enter your information.  If you experienced a problem entering your credit card info, please see the front desk.
+  </div>
+  <div [style.margin-top]="(platform.height()/4)-25+'px'"  *ngIf="loadingStripe==true" text-center>
+    <ion-spinner></ion-spinner>
+  </div>
+</ion-content>
