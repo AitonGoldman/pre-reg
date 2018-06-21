@@ -28,6 +28,6 @@
     <p>You will also need this information to login to the Papa Scoring Software which allows you to place yourself on queues and check results.</p>
   </div>
   <div text-center padding-top>
-    <button ion-button [navPush]="'CollectPlayerInfoPage'">Enter player info</button>
+    <button ion-button [navPush]="'CollectPlayerInfoPage'" [navParams]="{tournamentId:tournamentId,eventId:eventId}">Begin Registration </button>
   </div>
 </ion-content>

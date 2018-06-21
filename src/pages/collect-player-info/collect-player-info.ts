@@ -19,6 +19,9 @@ import { AlertController } from 'ionic-angular';
 export class CollectPlayerInfoPage {
     player: PlayerModel  = new PlayerModelBuilder().build();
     stripePublickKey: string = null;
+    tournamentId: any = null;
+    eventId: any = null;
+    
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public pssApi: PssApiProvider,
@@ -28,17 +31,19 @@ export class CollectPlayerInfoPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad CollectPlayerInfoPage');
+        this.tournamentId = this.navParams.get('tournamentId');
+        this.eventId = this.navParams.get('eventId');        
     }
     ionViewDidEnter() {
     }
     onSubmit(){        
-        this.pssApi.createPreRegPlayer({players:[this.player]},'3')
+        this.pssApi.createPreRegPlayer({players:[this.player]},this.eventId,this.tournamentId)
             .subscribe((results)=>{
                 if(results == null){
                     return;
                 }
                 if(results['status']=='created' || results['status']=='unpaid'){                    
-                    this.navCtrl.push('PayPreRegFeePage',{player:new PlayerModelBuilder().buildFromJson(results['data']).build(),kosher:true,stripePublicKey:results['stripe_key'],tokenPurchaseId:results['token_purchase']['token_purchase_id']});                    
+                    this.navCtrl.push('PayPreRegFeePage',{player:new PlayerModelBuilder().buildFromJson(results['data']).build(),kosher:true,stripePublicKey:results['stripe_key'],tokenPurchaseId:results['token_purchase']['token_purchase_id'],tournamentId:this.tournamentId,eventId:this.eventId});                    
                     return;
                 }
                 

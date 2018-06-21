@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { PssApiProvider } from '../../providers/pss-api/pss-api';
-import { PlayerModel, PlayerModelBuilder } from '../../models/PlayerModel'
+import { PlayerModel } from '../../models/PlayerModel'
 /**
  * Generated class for the PayPreRegFeePage page.
  *
@@ -25,6 +25,8 @@ export class PayPreRegFeePage {
     loadingStripe = true;
     stripeSuccess: boolean = false;
     stripeFailure: boolean = false;
+    tournamentId: any = null;
+    eventId: any = null;    
     
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,                
@@ -34,9 +36,11 @@ export class PayPreRegFeePage {
         
     ionViewDidEnter() {            
         if(this.navParams.get('kosher')==undefined){          
-            this.navCtrl.push('HomePage');
+            this.navCtrl.push('EventSelectPage');
             return;
         }
+        this.tournamentId = this.navParams.get('tournamentId')
+        this.eventId = this.navParams.get('eventId')
         this.player = this.navParams.get('player');
         this.stripePublicKey = this.navParams.get('stripePublicKey')
         console.log(this.player);
@@ -67,7 +71,7 @@ export class PayPreRegFeePage {
             //            token: function(token) {
             token : (token)=>{
                 this.stripeSuccess=true;
-                this.pssApi.completeTicketPurchase({stripe_token:token.id,email:token.email},3,tokenPurchaseId)
+                this.pssApi.completeTicketPurchase({stripe_token:token.id,email:token.email},this.eventId,tokenPurchaseId)
                     .subscribe((results)=>{
                         
                         if(results != null){

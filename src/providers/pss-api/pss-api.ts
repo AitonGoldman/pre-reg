@@ -71,7 +71,8 @@ export class PssApiProvider {
             return result_observable;            
         }
     }
-    createPreRegPlayer = this.generate_api_call('createPreRegPlayer',this.getApiUrl()+"/:arg/prereg_player",'post');        
+    getEvents = this.generate_api_call('getEvents',this.getApiUrl()+"/events/tournaments",'get');            
+    createPreRegPlayer = this.generate_api_call('createPreRegPlayer',this.getApiUrl()+"/:arg/:arg/prereg_player",'post');        
     completeTicketPurchase = this.generate_api_call('completeTicketPurchase',this.getApiUrl()+"/:arg/prereg-token/:arg",'put');
     
     private handleError<T> (operation = 'operation', result?: T) {                    

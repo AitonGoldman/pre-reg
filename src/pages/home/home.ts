@@ -15,13 +15,18 @@ import { PlayerModel, PlayerModelBuilder } from '../../models/PlayerModel'
   templateUrl: 'home.html',
 })
 export class HomePage {    
+    tournamentId: any = null;
+    eventId: any = null;
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public platform: Platform) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
+    }
+    
+    ionViewDidLoad() {        
+        console.log('ionViewDidLoad HomePage');
+        console.log(this.navParams)        
+        this.tournamentId = this.navParams.get('tournamentId');
+        this.eventId = this.navParams.get('eventId');        
+    }
 
 }
