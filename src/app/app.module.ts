@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { PssApiProvider } from '../providers/pss-api/pss-api';
   ],
   imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       IonicModule.forRoot(MyApp),
       HttpClientModule,      
       FormsModule

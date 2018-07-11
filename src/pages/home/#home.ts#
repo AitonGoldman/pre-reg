@@ -10,7 +10,7 @@ import { PlayerModel, PlayerModelBuilder } from '../../models/PlayerModel'
  */
 
 @IonicPage({
-    segment: 'home/:tournamentId/:eventId'
+        segment: 'home/:tournamentId/:eventId'
 })
 
 @Component({

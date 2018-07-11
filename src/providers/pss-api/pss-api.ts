@@ -15,7 +15,7 @@ import { of }         from 'rxjs/observable/of';
 */
 @Injectable()
 export class PssApiProvider {
-    pssHostUrl:string='http://0.0.0.0:8000';        
+    pssHostUrl:string='http://192.168.1.178:8000';        
     loading_instance = null;   
     timeoutInMs:number=10000;
     backendVersion=3;

@@ -8,12 +8,11 @@
 </ion-header>
 
 <ion-content class='card-background-page'>
-  <div margin-top>
+  <div style='position:relative' no-margin margin-top no-padding>
     <img showWhen='mobile'  style='opacity:.5;width:100%' [attr.height]="platform.height()/4+'px'" src="/assets/imgs/pinball_med.jpg"/>
     <div showWhen='mobile' class="card-title" text-center><h1 no-margin no-padding>Instructions</h1></div>
     <div hideWhen='mobile' text-center><h1 no-margin no-padding>Instructions</h1></div>
-
-  </div>
+ </div>
   <div margin [attr.text-center]="platform.is('mobile') ? null : ''">
     
     This site will allow you to pay the $20 fee for the 2018 Intergalactic charity pinball tournament (<a href="http://www.replayfx.org">Tournament details here</a>).  You will be asked to enter the following things :

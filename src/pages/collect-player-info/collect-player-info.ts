@@ -11,7 +11,9 @@ import { AlertController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+    segment: 'collect/:tournamentId/:eventId'
+})
 @Component({
   selector: 'page-collect-player-info',
   templateUrl: 'collect-player-info.html',

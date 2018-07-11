@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
     <ion-title>
       <span hideWhen='mobile'> Registration for 2018 Intergalactic</span>
       <span showWhen='mobile'> Registration</span>
@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content no-padding class='card-background-page'> 
-  <div margin-top>
+  <div style='position:relative' margin-top>
     <img showWhen='mobile' style='opacity:.5;width:100%' [attr.height]="platform.height()/4+'px'" src="/assets/imgs/players.jpg"/>
     <div showWhen='mobile' class="card-title" text-center><h1 no-margin no-padding>You Are Registered</h1></div>
     <div hideWhen='mobile' text-center><h1 no-margin no-padding>You Are Registered</h1></div>
@@ -45,6 +45,7 @@
     </ion-grid>     
   </div>
   <div margin-top text-center>
-    <button ion-button [navPush]="'HomePage'">Register another player</button>
+    <button showWhen="core" [@heroState]="state" ion-button (click)="navCtrl.remove(2,3)">Clear screen for next player</button>
+    <button showWhen="mobile" ion-button (click)="thisWindow.open('https://results.papa.org','_self')">Goto Papa Scoring Software</button>
   </div>
 </ion-content>
