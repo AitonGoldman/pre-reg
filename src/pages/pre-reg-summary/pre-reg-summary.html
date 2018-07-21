@@ -45,7 +45,7 @@
     </ion-grid>     
   </div>
   <div margin-top text-center>
-    <button showWhen="core" [@heroState]="state" ion-button (click)="navCtrl.remove(2,3)">Clear screen for next player</button>
+    <button showWhen="core" [@heroState]="state" ion-button (click)="jumpBack()">Clear screen for next player</button>
     <button showWhen="mobile" ion-button (click)="thisWindow.open('https://results.papa.org','_self')">Goto Papa Scoring Software</button>
   </div>
 </ion-content>

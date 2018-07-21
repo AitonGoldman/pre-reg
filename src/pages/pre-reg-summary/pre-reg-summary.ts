@@ -62,5 +62,10 @@ export class PreRegSummaryPage {
             this.toggleState();
         },1000)
         
-    }    
+    }
+    jumpBack(){
+        this.navCtrl.remove(this.navCtrl.getViews().length-1-2,3);
+        console.log(this.navCtrl.getViews());       
+    }
+    
 }
