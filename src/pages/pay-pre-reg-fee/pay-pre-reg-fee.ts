@@ -55,7 +55,7 @@ export class PayPreRegFeePage {
         
         let handler = StripeCheckout.configure({
             key: this.stripePublicKey,
-            image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+            //image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
             locale: 'auto',
             email: this.player.email_address,
             allowRememberMe: false,
@@ -88,7 +88,7 @@ export class PayPreRegFeePage {
             }
         });
         handler.open({
-            name: 'Intergalactic Registration',            
+            //name: 'Intergalactic Registration',            
             zipCode: false,
             amount: 100*20
         });

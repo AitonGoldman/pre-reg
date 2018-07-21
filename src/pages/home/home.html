@@ -8,23 +8,25 @@
 </ion-header>
 
 <ion-content class='card-background-page'>
-  <div style='position:relative' no-margin margin-top no-padding>
+  <div style='position:relative' no-margin  no-padding>
     <img showWhen='mobile'  style='opacity:.5;width:100%' [attr.height]="platform.height()/4+'px'" src="/assets/imgs/pinball_med.jpg"/>
     <div showWhen='mobile' class="card-title" text-center><h1 no-margin no-padding>Instructions</h1></div>
     <div hideWhen='mobile' text-center><h1 no-margin no-padding>Instructions</h1></div>
  </div>
   <div margin [attr.text-center]="platform.is('mobile') ? null : ''">
     
-    This site will allow you to pay the $20 fee for the 2018 Intergalactic charity pinball tournament (<a href="http://www.replayfx.org">Tournament details here</a>).  You will be asked to enter the following things :
+    This site will allow you to pay $20 for 10 tickets in the 2018 Intergalactic charity pinball tournament (The $20 is not refundable).  You will be asked to enter the following things :
 
     <ion-list margin-top margin-bottom [style.margin-left]="(platform.width()/2)-150+'px'">
-      <ion-item no-lines no-padding> <ion-icon name="arrow-round-forward" item-start></ion-icon><!--<ion-icon name="radio-button-off"></ion-icon>-->Your name and email address.</ion-item>
+      <ion-item no-lines no-padding> <ion-icon name="arrow-round-forward" item-start></ion-icon><!--<ion-icon name="radio-button-off"></ion-icon>-->Your name.</ion-item>
+      <ion-item no-lines no-padding> <ion-icon name="arrow-round-forward" item-start></ion-icon>Your email address.</ion-item>
       <ion-item no-lines no-padding> <ion-icon name="arrow-round-forward" item-start></ion-icon><!--<ion-icon name="radio-button-off"></ion-icon>-->Your credit card info </ion-item>
     </ion-list>
 
-    <p>To start this process, click the button at the bottom of the page.  Once you have entered this information you will be given your player number and pin.  This information will also be emailed to you.  You will need this information in order to play in the tournament.</p>
+    <p>To start this process, click the button at the bottom of the page.  Once you have been registered then you will be given your player number and pin.  This information will also be emailed to you.  You will need this information in order to play in the tournament.</p>
     
     <p>You will also need this information to login to the Papa Scoring Software which allows you to place yourself on queues and check results.</p>
+    <p>Note that the Intergalactic tournament is a limited HERB format - this means that you can not get more tickets once you have used your 10 tickets.  <a href="http://www.replayfx.org"> More tournament details here.</a></p>
   </div>
   <div text-center padding-top>
     <button ion-button [navPush]="'CollectPlayerInfoPage'" [navParams]="{tournamentId:tournamentId,eventId:eventId}">Begin Registration </button>
